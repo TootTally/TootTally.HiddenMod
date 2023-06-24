@@ -1,14 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net472</TargetFramework>
-		<AssemblyName>TootTally.ModuleTemplate</AssemblyName>
-		<Description>TootTally Module Template</Description>
+		<AssemblyName>TootTally.HiddenMod</AssemblyName>
+		<Description>TootTally Hidden Mod Module</Description>
 		<Version>0.1.0</Version>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<LangVersion>latest</LangVersion>
-		<TromboneChampDir>E:\SteamLibrary\steamapps\common\TromboneChamp</TromboneChampDir>
-		<TromboneTootDir>C:\Users\Sabz\AppData\Roaming\r2modmanPlus-local\TromboneChamp\profiles\Default</TromboneTootDir>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -27,11 +25,11 @@
 
 	<ItemGroup>
 		<Reference Include="TootTally">
-			<HintPath>$(TromboneTootDir)\BepInEx\plugins\TootTally-TootTally\TootTally.dll</HintPath>
+			<HintPath>$(TromboneTootDir)\TootTally.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(TromboneTootDir)\BepInEx\plugins\TootTally-ModuleTemplate"/>
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(TrombonePlugDir)\TootTally-HiddenMod"/>
 	</Target>
 </Project>

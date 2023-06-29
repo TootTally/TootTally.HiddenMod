@@ -38,10 +38,7 @@ namespace TootTally.HiddenMod
 
         private void TryInitialize()
         {
-            // Bind to the TTModules Config for TootTally
             ModuleConfigEnabled = TootTally.Plugin.Instance.Config.Bind("Modules", "HiddenMod", true, "Makes the note disappear as they approach the target.");
-            // Attempt to add this module to the TTModules page in TrombSettings
-            if (TootTally.Plugin.Instance.moduleSettings != null) OptionalTrombSettings.Add(TootTally.Plugin.Instance.moduleSettings, ModuleConfigEnabled);
             TootTally.Plugin.AddModule(this);
         }
 
